@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}
+    {{ keyword }}
+{% endblock title %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-2" style="text-align: center; color: brown;">The Latest News Updates On <strong style="color: green;">{{ keyword }}</strong>...</h1>
+    <hr>
+    <div class="row mb-2">
+        {% for news in news_list %}
+        <div class="col-md-12">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-lg h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <h2 class="mb-0">{{ news.title }}</h2>
+                <hr>               
+                {% if news.description %}
+                <blockquote class="blockquote">
+                  <p><i class="card-text mb-auto">{{ news.description }} <a href="{{ news.url }}" target="_blank">Read more</a></i></p>
+                </blockquote>
+                {% endif %}
+                <figcaption class="blockquote-footer text-end">
+                  {% if news.source.name %}
+                    <strong><strong class="text-danger">Source:&ThickSpace;</strong>{{ news.source.name }}</strong>
+                  {% endif %}
+                </figcaption>                
+              </div>
+              {% if news.urlToImage %}
+                <div class="col-auto d-none d-lg-block">
+                    <img src="{{ news.urlToImage }}" class="mx-2 my-2 rounded-3 border border-5 bd-placeholder-img" width="250" height="250" alt="Story Picture">
+                </div>
+              {% endif %}
+            </div>
+        </div>
+        {% endfor %} 
+      </div>
+ 
+</div>
+{% endblock content %}

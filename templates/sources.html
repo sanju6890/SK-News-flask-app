@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Sources
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h1 class="mt-2" style="text-align: center; color: brown;"><strong style="color: green;">SK News</strong> App's Sources...</h1>
+    <br>
+        <table class="table table-info table-striped">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Category</th>
+                <th scope="col">Url</th>
+              </tr>
+            </thead>            
+            <tbody>
+            {% for source in source_list %}
+            <!-- Filter By English Language-->
+            {% if source.language == "en" %}
+            <tr>
+                <td><strong>{{source.name}}</strong></td>
+                <td class="text-success">{{source.category}}</td>
+                <td><a href="{{source.url}}" target="_blank">{{source.url}}</a></td>
+            </tr>
+            {% endif %}
+            {% endfor %}
+            </tbody>
+        </table> 
+
+</div>
+{% endblock %}

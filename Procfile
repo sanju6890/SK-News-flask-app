@@ -1,0 +1,1 @@
+web: gunicorn NewsApp:app
