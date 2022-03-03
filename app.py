@@ -1,13 +1,14 @@
 from flask import Flask, request, render_template
 from decouple import config
 import json, requests
-from datetime import datetime, timezone
+from datetime import datetime
+from pytz import timezone
 
 app = Flask(__name__)
 
 @app.template_filter('strftime')
 def _jinja2_filter_datetime(date):
-    date_obj = datetime.fromisoformat(date[:-1]).astimezone(timezone.utc)
+    date_obj = datetime.fromisoformat(date[:-1]).astimezone(timezone('Asia/Kolkata'))
     format = '%d-%m-%y at %H:%M:%S'
     return date_obj.strftime(format) 
 
