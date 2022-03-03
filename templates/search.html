@@ -13,17 +13,19 @@
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-lg h-md-250 position-relative">
               <div class="col p-4 d-flex flex-column position-static">
                 <h2 class="mb-0">{{ news.title }}</h2>
-                <hr>               
                 {% if news.description %}
                 <blockquote class="blockquote">
                   <p><i class="card-text mb-auto">{{ news.description }} <a href="{{ news.url }}" target="_blank">Read more</a></i></p>
+                  <figcaption class="blockquote-footer">
+                    {% if news.source.name %}
+                      <strong><strong class="text-danger">Source:&ThickSpace;</strong>{{ news.source.name }}</strong> | 
+                      {% if news.publishedAt %}
+                      <strong><strong class="text-success">Published on:&ThickSpace;</strong>{{ news.publishedAt|strftime }}</strong>
+                      {% endif %}
+                    {% endif %}
+                  </figcaption> 
                 </blockquote>
-                {% endif %}
-                <figcaption class="blockquote-footer text-end">
-                  {% if news.source.name %}
-                    <strong><strong class="text-danger">Source:&ThickSpace;</strong>{{ news.source.name }}</strong>
-                  {% endif %}
-                </figcaption>                
+                {% endif %}             
               </div>
               {% if news.urlToImage %}
                 <div class="col-auto d-none d-lg-block">
