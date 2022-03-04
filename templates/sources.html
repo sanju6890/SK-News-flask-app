@@ -6,7 +6,7 @@
 
 {% block content %}
 <div class="container">
-    <h1 class="mt-2" style="text-align: center; color: brown;"><strong style="color: green;">SK News</strong> App's Sources...</h1>
+    <h1 class="mt-3" style="text-align: center; color: brown;"><strong style="color: green;">SK News</strong> App's Sources...</h1>
     <hr>
     <div class="table-responsive">
       <table class="table table-info table-striped">
@@ -14,7 +14,6 @@
                     <tr>
                       <th scope="col">Name</th>
                       <th scope="col">Category</th>
-                      <th scope="col">Url</th>
                     </tr>
                   </thead>            
                   <tbody>
@@ -22,9 +21,8 @@
                   <!-- Filter By English Language-->
                   {% if source.language == "en" %}
                   <tr>
-                      <td><strong>{{source.name}}</strong></td>
+                      <td><a href="{{source.url}}" target="_blank">{{source.name}}</a></td>
                       <td class="text-success">{{source.category}}</td>
-                      <td><a href="{{source.url}}" target="_blank">{{source.url}}</a></td>
                   </tr>
                   {% endif %}
                   {% endfor %}

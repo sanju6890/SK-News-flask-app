@@ -41,7 +41,9 @@
   <!-- Fixed navbar -->
   <nav class="navbar navbar-expand-md navbar-light fixed-top bg-warning" style="font-weight: bold; font-size: large;">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/" style="color: green;">📰 SK News</a>
+      <a class="navbar-brand" href="/" style="color: green;">
+        <img src="{{ url_for('static', filename='news_icon.png') }}" alt="SK News Icon" width="50"><strong>SK News</strong>
+      </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -52,6 +54,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/sources">Sources</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/sanju6890/SK-News-flask-app" target="_blank">GitHub</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
