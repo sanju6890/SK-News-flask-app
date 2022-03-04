@@ -1,10 +1,9 @@
 
+![Logo](https://raw.githubusercontent.com/sanju6890/SK-News-flask-app/master/static/news_icon.png)
+
 # SK News App
 
 This is a web application that serves the latest news updates from multiple sources with search news by keyword functionality.
-
-
-![Logo](https://raw.githubusercontent.com/sanju6890/SK-News-flask-app/master/static/news_icon.png)
 
 
 ## Features
