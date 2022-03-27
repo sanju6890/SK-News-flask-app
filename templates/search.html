@@ -12,7 +12,8 @@
         <div class="col-md-12">
             <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-lg h-md-250 position-relative">
               <div class="col p-4 d-flex flex-column position-static">
-                <h2 class="mb-0">{{ news.title }}</h2>
+                <h2 class="mb-0"><a href="{{ news.url }}"onMouseOver="this.style.color='red'"
+                  onMouseOut="this.style.color='green'">{{ news.title }}</a></h2>
                 {% if news.description %}
                 <blockquote class="blockquote">
                   <p><i class="card-text mb-auto">{{ news.description }} <a href="{{ news.url }}" target="_blank">Read more</a></i></p>
