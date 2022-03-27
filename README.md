@@ -21,7 +21,7 @@ This is a web application that serves the latest news updates from multiple sour
 **Backend:** Flask Framework [Python], News API [newsapi.org]
 
 
-## Deployment
+## Local Deployment
 
 To deploy this project run the following commands [windows]:
 
@@ -31,7 +31,7 @@ Create a virtual environment:
 ```
 Activate the virtual environment:
 ```
-.venv\Script\activate
+<name>\Script\activate
 ```
 Install all the Dependencies
 ```
